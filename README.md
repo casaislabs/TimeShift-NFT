@@ -92,7 +92,7 @@ console.log(uri); // Returns base64-encoded JSON with dynamic SVG
 
 ### Error handling
 
-If you query a non-existent token, the contract will revert with `"Token no existe"`.
+If you query a non-existent token, the contract will revert with `"Token does not exist"`.
 
 ---
 
@@ -105,7 +105,7 @@ If you query a non-existent token, the contract will revert with `"Token no exis
     The `tokenURI` function returns a base64-encoded SVG whose color changes with the time of day.
 
 - **Robust Error Handling:**  
-    Querying a non-existent token reverts with `"Token no existe"`.
+    Querying a non-existent token reverts with `"Token does not exist"`.
 
 ---
 
