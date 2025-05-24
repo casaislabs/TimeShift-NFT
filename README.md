@@ -15,6 +15,15 @@ TimeShift-NFT is an advanced dynamic NFT project built with Hardhat and Ignition
 - **Deployment:** [`DynamicNFTModule.js`](ignition/modules/DynamicNFTModule.js)  
     Automated deployment with Hardhat Ignition.
 
+## 📦 Project Structure
+
+- **Smart Contract:** [`DynamicNFT.sol`](contracts/DynamicNFT.sol)  
+    On-chain logic for minting and dynamic SVG generation.
+- **Testing:** [`DynamicNFT.test.js`](test/DynamicNFT.test.js)  
+    Comprehensive unit tests for contract reliability.
+- **Deployment:** [`DynamicNFTModule.js`](ignition/modules/DynamicNFTModule.js)  
+    Automated deployment with Hardhat Ignition.
+
 ---
 
 ## 🚀 Live Deployment
@@ -28,29 +37,28 @@ TimeShift-NFT is an advanced dynamic NFT project built with Hardhat and Ignition
 ## ⚡ Quickstart
 
 1. **Install dependencies**
-        ```sh
+        ```
         npm install
         ```
 
 2. **Configure environment**
-        ```env
-        SEPOLIA_RPC_URL=your_sepolia_rpc_url
-        PRIVATE_KEY=your_private_key
-        ETHERSCAN_API_KEY=your_etherscan_api_key
-        ```
+```
+SEPOLIA_RPC_URL=your_sepolia_rpc_url
+PRIVATE_KEY=your_private_key
+ETHERSCAN_API_KEY=your_etherscan_api_key
+```
 
 3. **Run tests**
-        ```sh
+        ```
         npx hardhat test
         ```
 
 4. **Deploy to Sepolia**
-        ```sh
+        ```
         npx hardhat ignition deploy ./ignition/modules/DynamicNFTModule.js --network sepolia
         ```
 
 5. **Verify on Etherscan**
-        ```sh
         npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
         ```
 
