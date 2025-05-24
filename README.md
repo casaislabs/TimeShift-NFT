@@ -28,9 +28,9 @@ TimeShift-NFT is an advanced dynamic NFT project built with Hardhat and Ignition
 
 ## 🚀 Live Deployment
 
-- **Contract Address:** [`0x474fad040149CaeFb4a552ab943309dF2689F7f1`](https://sepolia.etherscan.io/address/0x474fad040149CaeFb4a552ab943309dF2689F7f1)
-- **Etherscan:** [View Code](https://sepolia.etherscan.io/address/0x474fad040149CaeFb4a552ab943309dF2689F7f1#code)
-- **Sourcify:** [Full Match](https://repo.sourcify.dev/contracts/full_match/11155111/0x474fad040149CaeFb4a552ab943309dF2689F7f1/)
+- **Contract Address:** [`0xA7FF038011ab80e0837262c9BAe3814352317cF4`](https://sepolia.etherscan.io/address/0xA7FF038011ab80e0837262c9BAe3814352317cF4)
+- **Etherscan:** [View Code](https://sepolia.etherscan.io/address/0xA7FF038011ab80e0837262c9BAe3814352317cF4#code)
+- **Sourcify:** [Full Match](https://repo.sourcify.dev/contracts/full_match/11155111/0xA7FF038011ab80e0837262c9BAe3814352317cF4/)
 
 ---
 
@@ -78,7 +78,7 @@ npx hardhat console --network sepolia
 const [owner] = await ethers.getSigners();
 const contract = await ethers.getContractAt(
   "DynamicNFT",
-  "0x474fad040149CaeFb4a552ab943309dF2689F7f1" // Replace with your contract address if needed
+  "0xA7FF038011ab80e0837262c9BAe3814352317cF4" // Replace with your contract address if needed
 );
 await contract.mint();
 ```
@@ -126,16 +126,12 @@ Most wallets and NFT marketplaces (including MetaMask and OpenSea) **cache the m
 Although this NFT generates its SVG image dynamically on-chain, you may not see the color change in your wallet or marketplace view.  
 To see the current, real-time SVG, you can call the `tokenURI` function directly on the contract (e.g., using Hardhat Console or Etherscan).
 
+## 👀 View Your NFT in Real Time
+
+To see your NFT's current color and time, use the provided script:
+
+```sh
+npx hardhat run scripts/mint-and-view-nft.js --network sepolia
 ```
 
-This clarifies the behavior for users and reviewers, and refuerza tu reputación como desarrollador web3 profesional y transparente.---
-
-## ⚠️ Note on Dynamic Metadata
-
-Most wallets and NFT marketplaces (including MetaMask and OpenSea) **cache the metadata at the time of minting** and do not update it in real time.  
-Although this NFT generates its SVG image dynamically on-chain, you may not see the color change in your wallet or marketplace view.  
-To see the current, real-time SVG, you can call the `tokenURI` function directly on the contract (e.g., using Hardhat Console or Etherscan).
-
-```
-
-This clarifies the behavior for users and reviewers, and refuerza tu reputación como desarrollador web3 profesional y transparente.
+This script will mint a new NFT and display its real-time SVG (with current UTC hour, minute, and second) decoded directly from the blockchain.

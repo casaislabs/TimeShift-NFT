@@ -14,19 +14,18 @@ contract DynamicNFT is ERC721 {
         _safeMint(msg.sender, tokenCounter);
     }
 
-    // override tokenURI para usar la lógica personalizada on-chain
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
-        // Validamos existencia llamando a ownerOf via try/catch
-    try this.ownerOf(tokenId) returns (address) {
-        // token existe, seguimos normalmente
-    } catch {
-        revert("Token no existe");
-}
+        try this.ownerOf(tokenId) returns (address) {
+        } catch {
+            revert("Token does not exist");
+        }
 
-
+        // Get current UTC hour, minute, and second
         uint256 hour = (block.timestamp / 60 / 60) % 24;
+        uint256 minute = (block.timestamp / 60) % 60;
+        uint256 second = block.timestamp % 60;
 
-        string memory svg = generateSVG(hour);
+        string memory svg = generateSVG(hour, minute, second);
 
         string memory image = string(
             abi.encodePacked(
@@ -38,7 +37,7 @@ contract DynamicNFT is ERC721 {
         string memory json = string(
             abi.encodePacked(
                 '{"name":"TimeShift NFT #', uint2str(tokenId), '",',
-                unicode'"description":"NFT que cambia su color según la hora del día.",',
+                '"description":"NFT that changes its color based on the current UTC time.",',
                 '"image":"', image, '"}'
             )
         );
@@ -48,7 +47,7 @@ contract DynamicNFT is ERC721 {
         return string(abi.encodePacked("data:application/json;base64,", jsonBase64));
     }
 
-    function generateSVG(uint256 hour) internal pure returns (string memory) {
+    function generateSVG(uint256 hour, uint256 minute, uint256 second) internal pure returns (string memory) {
         string memory color;
 
         if (hour < 12) {
@@ -63,8 +62,8 @@ contract DynamicNFT is ERC721 {
             abi.encodePacked(
                 '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">',
                 '<rect width="200" height="200" fill="', color, '" />',
-                '<text x="100" y="100" font-size="24" text-anchor="middle" fill="black" dy=".3em">',
-                'Hora: ', uint2str(hour),
+                '<text x="100" y="100" font-size="20" text-anchor="middle" fill="black" dy=".3em">',
+                'UTC: ', uint2str(hour), ':', pad2(minute), ':', pad2(second),
                 '</text>',
                 '</svg>'
             )
@@ -89,5 +88,19 @@ contract DynamicNFT is ERC721 {
             j /= 10;
         }
         str = string(bstr);
+    }
+
+    // Pads a number to 2 digits (e.g., 7 -> "07")
+    function pad2(uint256 _i) internal pure returns (string memory) {
+        if (_i >= 10) {
+            return uint2str(_i);
+        } else {
+            return string(abi.encodePacked("0", uint2str(_i)));
+        }
+    }
+
+    // Debug: Get current block.timestamp
+    function getCurrentTimestamp() public view returns (uint256) {
+        return block.timestamp;
     }
 }
