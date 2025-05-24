@@ -9,7 +9,6 @@ describe("DynamicNFT", function () {
     [owner, addr1] = await ethers.getSigners();
 
     dynamicNFT = await DynamicNFT.deploy();
-    // await dynamicNFT.deployed(); // Eliminada, no es necesaria en ethers v6+
   });
 
   it("Debería comenzar con tokenCounter en 0", async function () {
