@@ -117,3 +117,25 @@ If you query a non-existent token, the contract will revert with `"Token no exis
 
 > **Connect. Build. Shift Time.**  
 > _Push the boundaries of dynamic NFTs with TimeShift-NFT._
+
+---
+
+## ⚠️ Note on Dynamic Metadata
+
+Most wallets and NFT marketplaces (including MetaMask and OpenSea) **cache the metadata at the time of minting** and do not update it in real time.  
+Although this NFT generates its SVG image dynamically on-chain, you may not see the color change in your wallet or marketplace view.  
+To see the current, real-time SVG, you can call the `tokenURI` function directly on the contract (e.g., using Hardhat Console or Etherscan).
+
+```
+
+This clarifies the behavior for users and reviewers, and refuerza tu reputación como desarrollador web3 profesional y transparente.---
+
+## ⚠️ Note on Dynamic Metadata
+
+Most wallets and NFT marketplaces (including MetaMask and OpenSea) **cache the metadata at the time of minting** and do not update it in real time.  
+Although this NFT generates its SVG image dynamically on-chain, you may not see the color change in your wallet or marketplace view.  
+To see the current, real-time SVG, you can call the `tokenURI` function directly on the contract (e.g., using Hardhat Console or Etherscan).
+
+```
+
+This clarifies the behavior for users and reviewers, and refuerza tu reputación como desarrollador web3 profesional y transparente.
