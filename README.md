@@ -64,6 +64,38 @@ ETHERSCAN_API_KEY=your_etherscan_api_key
 
 ---
 
+## 🧑‍💻 Usage
+
+After deployment, you can interact with the contract using Hardhat Console or scripts.
+
+### Mint a new NFT
+
+```
+npx hardhat console --network sepolia
+```
+
+```
+const [owner] = await ethers.getSigners();
+const contract = await ethers.getContractAt(
+  "DynamicNFT",
+  "0x474fad040149CaeFb4a552ab943309dF2689F7f1" // Replace with your contract address if needed
+);
+await contract.mint();
+```
+
+### Retrieve token metadata
+
+```
+const uri = await contract.tokenURI(1);
+console.log(uri); // Returns base64-encoded JSON with dynamic SVG
+```
+
+### Error handling
+
+If you query a non-existent token, the contract will revert with `"Token no existe"`.
+
+---
+
 ## 📝 Features
 
 - **Unique NFT Minting:**  
