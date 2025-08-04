@@ -68,7 +68,7 @@ ETHERSCAN_API_KEY=your_etherscan_api_key
 
 A dedicated frontend is available to interact with the TimeShift-NFT smart contract. You can mint NFTs, view real-time dynamic SVGs, and explore your collection visually.
 
-- **Live Demo (Vercel):** [https://time-shift-nft-frontend.vercel.app/](https://time-shift-nft-frontend.casaislabs.com/)
+- **Live Demo (Vercel):** [https://time-shift-nft-frontend.casaislabs.com/](https://time-shift-nft-frontend.casaislabs.com/)
 - **Source Code (GitHub):** [https://github.com/martinperezcss/TimeShift-NFT-Frontend](https://github.com/casaislabs/TimeShift-NFT-Frontend)
 
 > The frontend is fully integrated with the deployed contract on Sepolia. Connect your wallet and experience dynamic NFTs in real time!
