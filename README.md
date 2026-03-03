@@ -58,8 +58,8 @@ ETHERSCAN_API_KEY=your_etherscan_api_key
     `
 
 5. **Verify on Etherscan**
-   npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
-   ```
+      `     npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
+    `
 
 ---
 
