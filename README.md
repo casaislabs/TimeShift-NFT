@@ -1,4 +1,5 @@
 # TimeShift-NFT
+
 TimeShift-NFT is an advanced dynamic NFT project built with Hardhat and Ignition, designed for modern Web3 developers.
 
 > **Dynamic NFTs, Real-Time Visuals:**  
@@ -9,20 +10,20 @@ TimeShift-NFT is an advanced dynamic NFT project built with Hardhat and Ignition
 ## 🏗️ Project Overview
 
 - **Smart Contract:** [`DynamicNFT.sol`](contracts/DynamicNFT.sol)  
-    On-chain logic for minting and dynamic SVG generation.
+   On-chain logic for minting and dynamic SVG generation.
 - **Testing:** [`DynamicNFT.test.js`](test/DynamicNFT.test.js)  
-    Comprehensive unit tests for contract reliability.
+   Comprehensive unit tests for contract reliability.
 - **Deployment:** [`DynamicNFTModule.js`](ignition/modules/DynamicNFTModule.js)  
-    Automated deployment with Hardhat Ignition.
+   Automated deployment with Hardhat Ignition.
 
 ## 📦 Project Structure
 
 - **Smart Contract:** [`DynamicNFT.sol`](contracts/DynamicNFT.sol)  
-    On-chain logic for minting and dynamic SVG generation.
+   On-chain logic for minting and dynamic SVG generation.
 - **Testing:** [`DynamicNFT.test.js`](test/DynamicNFT.test.js)  
-    Comprehensive unit tests for contract reliability.
+   Comprehensive unit tests for contract reliability.
 - **Deployment:** [`DynamicNFTModule.js`](ignition/modules/DynamicNFTModule.js)  
-    Automated deployment with Hardhat Ignition.
+   Automated deployment with Hardhat Ignition.
 
 ---
 
@@ -37,11 +38,11 @@ TimeShift-NFT is an advanced dynamic NFT project built with Hardhat and Ignition
 ## ⚡ Quickstart
 
 1. **Install dependencies**
-        ```
-        npm install
-        ```
+   `     npm install
+    `
 
 2. **Configure environment**
+
 ```
 SEPOLIA_RPC_URL=your_sepolia_rpc_url
 PRIVATE_KEY=your_private_key
@@ -49,18 +50,16 @@ ETHERSCAN_API_KEY=your_etherscan_api_key
 ```
 
 3. **Run tests**
-        ```
-        npx hardhat test
-        ```
+   `     npx hardhat test
+    `
 
 4. **Deploy to Sepolia**
-        ```
-        npx hardhat ignition deploy ./ignition/modules/DynamicNFTModule.js --network sepolia
-        ```
+   `     npx hardhat ignition deploy ./ignition/modules/DynamicNFTModule.js --network sepolia
+    `
 
 5. **Verify on Etherscan**
-        npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
-        ```
+   npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
+   ```
 
 ---
 
@@ -69,7 +68,7 @@ ETHERSCAN_API_KEY=your_etherscan_api_key
 A dedicated frontend is available to interact with the TimeShift-NFT smart contract. You can mint NFTs, view real-time dynamic SVGs, and explore your collection visually.
 
 - **Live Demo (Vercel):** [https://time-shift-nft-frontend.casaislabs.com/](https://time-shift-nft-frontend.casaislabs.com/)
-- **Source Code (GitHub):** [https://github.com/martinperezcss/TimeShift-NFT-Frontend](https://github.com/casaislabs/TimeShift-NFT-Frontend)
+- **Source Code (GitHub):** [https://github.com/casaislabs/TimeShift-NFT-Frontend](https://github.com/casaislabs/TimeShift-NFT-Frontend)
 
 > The frontend is fully integrated with the deployed contract on Sepolia. Connect your wallet and experience dynamic NFTs in real time!
 
@@ -110,13 +109,13 @@ If you query a non-existent token, the contract will revert with `"Token does no
 ## 📝 Features
 
 - **Unique NFT Minting:**  
-    Each token is unique and can be minted by users.
+   Each token is unique and can be minted by users.
 
 - **Dynamic SVG Metadata:**  
-    The `tokenURI` function returns a base64-encoded SVG whose color changes with the time of day.
+   The `tokenURI` function returns a base64-encoded SVG whose color changes with the time of day.
 
 - **Robust Error Handling:**  
-    Querying a non-existent token reverts with `"Token does not exist"`.
+   Querying a non-existent token reverts with `"Token does not exist"`.
 
 ---
 
